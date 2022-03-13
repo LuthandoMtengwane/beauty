@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="base.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>FOODLE</title>
+  </head>
+  <body>
+    <!-- <h2 class="cursor">FOODLE-FOOD-COMPANY-</h2> -->
+
+    <div class="scroll-icon scroll">
+      <span class="wheel"></span>
+    </div>
+
+    <header>
+      <a href="#"
+        ><div class="booking">
+          <h3>
+            book us<br />
+            online <br />
+            <hr />
+          </h3>
+          <p>
+            or call us to have a <br />
+            contact discussion
+          </p>
+          <p>071 914 1426</p>
+        </div></a
+      >
+      <div class="waterbg"></div>
+      <div class="hero-section">
+        <div class="title">
+          <h1 class="anim1">
+            <span>Welcome to</span>
+            <span>our digital</span>
+            <span>food space</span>
+          </h1>
+        </div>
+        <p class="anim2"><span>We cater for</span> every event too.</p>
+      </div>
+    </header>
+
+    <section class="sec-02">
+      <div class="word-bg">Explore our great</div>
+      <div class="section-container">
+        <div class="desc-container">
+          <h1>
+            Welcome to <br />
+            our space
+          </h1>
+          <p>
+            We provide great catering and hosting<br />
+            services and we provide our services for <br />
+            any catering event. With great charisma<br />
+            dishes and presentation. <br />
+            We have been in business for over 6 years now.
+          </p>
+          <a href="#"
+            >DISCOVER MORE &nbsp;&nbsp;
+            <big
+              ><big><big>&#8594;</big></big></big
+            ></a
+          >
+        </div>
+        <div class="img-container">
+          <img src="assets/img/eiliv-sonas-aceron.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-03"></section>
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
+    <script>
+      var rule = CSSRulePlugin.getRule(".anim1 span:after");
+
+      gsap.from(".anim1", { opacity: 0, duration: 1.5, y: -50, stagger: 0.5 });
+      gsap.from(".anim2", { opacity: 0, delay: 0.4, duration: 1.5, y: 50 });
+      gsap.from(".waterbg", { opacity: 0, delay: 0.4, duration: 1.5, x: 50 });
+      gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1.5 });
+      gsap.from(".booking", { opacity: 0, delay: 0.4, duration: 1.5, x: -50 });
+
+      // var tl = gsap.timeline({defaults:{duration: 1.5}});
+
+      // tl.from(".anim1", {y: -50, stagger: 0.5, opacity: 0})
+      // .to(rule, {duration: 1.8, cssRule:{scaleY: 0}})
+
+    </script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 400,
+        duration: 1000,
+      });
+    </script>
+
+    <script>
+      ScrollReveal({
+        reset: false,
+        distance: "60px",
+        duration: 2500,
+        delay: 400,
+      });
+
+      ScrollReveal().reveal(".desc-container h1", {
+        delay: 500,
+        origin: "top",
+      });
+      ScrollReveal().reveal(".desc-container p", {
+        delay: 600,
+        origin: "left",
+      });
+      ScrollReveal().reveal(".img-container img", {
+        delay: 600,
+        origin: "right",
+      });
+    </script>
+
+    <script src="app.js"></script>
+  </body>
+</html>
