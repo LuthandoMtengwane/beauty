@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
@@ -32,8 +33,114 @@ body {
   src: url("assets/fonts/Thunder-LightHC.woff");
 }
 
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 60px;
+}
+
+.nav .logo {
+  font-size: 1.5rem;
+}
+
+.nav .menu__btn,
+.nav .exit {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  opacity: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: -100%;
+  background-color: #1f1f1f;
+  padding: 0px 50px;
+}
+
+.menu .background {
+  position: absolute;
+  font-size: 14rem;
+  color: rgba(255, 255, 255, 0.1);
+  left: 20%;
+  z-index: -2;
+}
+
+.menu .exit {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.menu .nav__link {
+  font-size: 3rem;
+}
+
+.menu .nav__link .numbers {
+  font-size: 1.5rem;
+}
+
+.menu .nav__link .nav {
+  margin-top: -20px;
+  opacity: 0;
+}
+
+.menu .title {
+  color: #a1a1a1;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.menu .menu__info {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .menu {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .menu__container {
+    display: none;
+  }
+}
+
 header {
   position: relative;
+  color: #fff;
 }
 
 .scroll-icon {
@@ -42,7 +149,7 @@ header {
   height: 45px;
   border-radius: 50px;
   position: absolute;
-  border: 3px solid #000;
+  border: 3px solid #FFFF;
   bottom: 2%;
   left: 50%;
 }
@@ -51,33 +158,51 @@ header {
   position: absolute;
   width: 0.7em;
   height: 0.7em;
-  background-color: #000;
+  background-color: #FFFF;
   left: 48%;
   top: 15%;
-  transform: translate(-50%, 0);
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   border-radius: 0.6em;
-  animation: wheel 1s ease-in-out infinite;
+  -webkit-animation: wheel 1s ease-in-out infinite;
+          animation: wheel 1s ease-in-out infinite;
 }
 
 .cursor {
   position: absolute;
-  color: #000;
+  color: #FFFFFF;
   font-size: 1.5em;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   pointer-events: none;
-  animation: animate 7.5s linear infinite;
+  -webkit-animation: animate 7.5s linear infinite;
+          animation: animate 7.5s linear infinite;
   left: 10%;
   top: 19%;
   z-index: 11;
 }
 
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
 
 @keyframes animate {
   0% {
-    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -86,12 +211,14 @@ header {
   text-transform: uppercase;
   display: inline-block;
   top: -100px;
-  transform-origin: 0 90px;
+  -webkit-transform-origin: 0 90px;
+          transform-origin: 0 90px;
 }
 
-@keyframes wheel {
+@-webkit-keyframes wheel {
   0% {
-    transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
     opacity: 0;
   }
   20%,
@@ -99,17 +226,44 @@ header {
     opacity: 1;
   }
   90%, 100% {
-    transform: translate(-50%, 150%);
+    -webkit-transform: translate(-50%, 150%);
+            transform: translate(-50%, 150%);
+    opacity: 0;
+  }
+}
+
+@keyframes wheel {
+  0% {
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  20%,
+  70% {
+    opacity: 1;
+  }
+  90%, 100% {
+    -webkit-transform: translate(-50%, 150%);
+            transform: translate(-50%, 150%);
     opacity: 0;
   }
 }
 
 .hero-section {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .hero-section p {
@@ -130,11 +284,13 @@ header {
   height: 100%;
   background-color: #fff;
   z-index: 1;
-  transform-origin: 100% 0;
+  -webkit-transform-origin: 100% 0;
+          transform-origin: 100% 0;
 }
 
 .title {
   font-family: "Thunder-BlackLC", sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
   font-size: 4em;
   margin-bottom: 2rem;
@@ -142,14 +298,15 @@ header {
 
 .waterbg {
   position: absolute;
-  width: 36%;
+  width: 100%;
   height: 100vh;
   z-index: -1;
-  background: url("assets/img/victoria-shes.jpg");
+  background: url("assets/img/charisse.jpg");
   background-size: cover;
   mix-blend-mode: overlay;
-  opacity: 0.6;
+  background-color: rgba(0, 0, 0, 0.6);
   right: 0;
+  z-index: -1;
 }
 
 header {
@@ -158,13 +315,22 @@ header {
 
 .booking {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 250px;
   width: 250px;
-  background-color: #000;
+  background-color: #FFFFFF;
   border-radius: 50%;
   bottom: 10%;
   left: 10%;
@@ -172,11 +338,11 @@ header {
 
 .booking a {
   text-decoration: none;
-  color: #fff;
+  color: #000000;
 }
 
 .booking h3 {
-  color: #fff;
+  color: #000000;
   text-transform: uppercase;
   font-family: "Larsseit-Medium", sans-serif;
   font-size: 1.5rem;
@@ -184,28 +350,33 @@ header {
 }
 
 .booking p {
-  color: #fff;
+  color: #000000;
   font-family: "Larsseit-Light", sans-serif;
   margin-bottom: 15px;
 }
 
 .booking span {
-  color: #fff;
+  color: #000000;
   font-family: "Larsseit-Medium", sans-serif;
 }
 
 .sec-02 {
   height: 100vh !important;
+  background-color: #e5d4e1;
 }
 
-.section-container {
+.sec-02 .section-container {
   position: relative;
   margin: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.desc-container h1 {
+.sec-02 .desc-container h1 {
   margin-top: 1.5em;
   font-family: "Thunder-LightHC", sans-serif;
   font-size: 7rem;
@@ -213,20 +384,21 @@ header {
   margin-bottom: 2rem;
 }
 
-.desc-container p {
+.sec-02 .desc-container p {
   font-size: 1.5rem;
   font-family: "Larsseit-Light", sans-serif;
   margin-bottom: 2em;
 }
 
-.desc-container a {
+.sec-02 .desc-container a {
+  margin-top: -60px;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: "Larsseit-Light", sans-serif;
   color: #000;
 }
 
-.word-bg {
+.sec-02 .word-bg {
   position: absolute;
   overflow-x: hidden;
   font-family: "Garamond", sans-serif;
@@ -235,85 +407,310 @@ header {
   color: #f3f3f3;
 }
 
-.img-container img {
-  flex: 2;
-  height: 700px;
+.sec-02 .img-container img {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 500px;
   width: 600px;
   margin-top: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sec-03 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec-03 .section-container {
+  position: relative;
+  margin: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5rem;
+}
+
+.sec-03 .desc-container h1 {
+  margin-top: 1.5em;
+  font-family: "Thunder-LightHC", sans-serif;
+  font-size: 7rem;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.sec-03 .desc-container p {
+  font-size: 1.5rem;
+  font-family: "Larsseit-Light", sans-serif;
+  margin-bottom: 2em;
+}
+
+.sec-03 .desc-container a {
+  margin-top: -60px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Larsseit-Light", sans-serif;
+  color: #000;
+}
+
+.sec-03 .word-bg {
+  position: absolute;
+  overflow-x: hidden;
+  left: 20%;
+  font-family: "Garamond", sans-serif;
+  margin-top: 20%;
+  font-size: 12rem;
+  color: #f3f3f3;
+  z-index: -1;
+}
+
+.sec-03 .img-container img {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 500px;
+  width: 600px;
+  margin-top: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 2rem;
+}
+
+.sec-04 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec-04 .section-container {
+  position: relative;
+  margin: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5rem;
+}
+
+.sec-04 .desc-container h1 {
+  margin-top: 1.5em;
+  font-family: "Thunder-LightHC", sans-serif;
+  font-size: 7rem;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.sec-04 .desc-container p {
+  font-size: 1.5rem;
+  font-family: "Larsseit-Light", sans-serif;
+  margin-bottom: 2em;
+}
+
+.sec-04 .desc-container a {
+  margin-top: -60px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Larsseit-Light", sans-serif;
+  color: #000;
+}
+
+.sec-04 .word-bg {
+  position: absolute;
+  overflow-x: hidden;
+  left: 20%;
+  font-family: "Garamond", sans-serif;
+  margin-top: 20%;
+  font-size: 12rem;
+  color: #f3f3f3;
+  z-index: -1;
+}
+
+.sec-04 .img-container img {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 500px;
+  width: 600px;
+  margin-top: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 2rem;
+}
+
+.sec-05 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sec-05 .section-container {
+  position: relative;
+  margin: 0 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5rem;
+}
+
+.sec-05 .desc-container h1 {
+  margin-top: 1.5em;
+  font-family: "Thunder-LightHC", sans-serif;
+  font-size: 7rem;
+  font-weight: lighter;
+  margin-bottom: 2rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.sec-05 .desc-container p {
+  font-size: 1.5rem;
+  font-family: "Larsseit-Light", sans-serif;
+  margin-bottom: 2em;
+}
+
+.sec-05 .desc-container a {
+  margin-top: -60px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Larsseit-Light", sans-serif;
+  color: #000;
+}
+
+.sec-05 .word-bg {
+  position: absolute;
+  overflow-x: hidden;
+  left: 20%;
+  font-family: "Garamond", sans-serif;
+  margin-top: 20%;
+  font-size: 12rem;
+  color: #f3f3f3;
+  z-index: -1;
+}
+
+.sec-05 .img-container img {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  height: 500px;
+  width: 600px;
+  margin-top: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: 2rem;
+}
+
+.sec-06 {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e5d4e1;
 }
 
 @media (max-width: 800px) {
+  .hero-section {
+    height: 100vh;
+  }
   .hero-section .title .anim1 {
     position: absolute;
     font-size: 14vw;
     left: 10px;
-    top: 20%;
+    top: 40%;
   }
-
   .waterbg {
     position: absolute;
-    width: 60%;
+    width: 100%;
     height: 100vh;
     z-index: -1;
-    background: url("assets/img/victoria-shes.jpg");
+    background: url("assets/img/charisse.jpg");
     background-size: cover;
     mix-blend-mode: overlay;
-    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.746);
     right: 0;
   }
-
   .booking {
     position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     height: 150px;
     width: 150px;
-    background-color: #000;
+    background-color: #FFF;
     border-radius: 50%;
     bottom: 0;
     /* right: 0; */
     left: 34%;
   }
-  
   .booking a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
   }
-  
   .booking h3 {
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     font-family: "Larsseit-Medium", sans-serif;
     font-size: 1em;
     margin-bottom: 10px;
   }
-  
   .booking p {
-    color: #fff;
+    color: #000;
     font-family: "Larsseit-Light", sans-serif;
     margin-bottom: 15px;
   }
-  
   .booking span {
-    color: #fff;
+    color: #000;
     font-family: "Larsseit-Medium", sans-serif;
   }
-
   .scroll-icon {
     display: none;
   }
-
   .hero-section p {
     font-size: 4vw;
     position: absolute;
     bottom: 16%;
     left: 30%;
   }
-
   .anim2 span {
     display: block;
   }
-
 }
+/*# sourceMappingURL=main.css.map */

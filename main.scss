@@ -1,0 +1,596 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "Thunder-BlackLC";
+  src: url("assets/fonts/Thunder-BlackLC.woff");
+}
+
+@font-face {
+  font-family: "Larsseit-Light";
+  src: url("assets/fonts/Larsseit-Light.woff");
+}
+
+@font-face {
+  font-family: "Larsseit-Medium";
+  src: url("assets/fonts/Larsseit-Medium.woff");
+}
+
+@font-face {
+  font-family: "Thunder-LightHC";
+  src: url("assets/fonts/Thunder-LightHC.woff");
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .menu__btn,
+  .exit {
+    cursor: pointer;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: -100%;
+  background-color: rgb(31, 31, 31);
+  padding: 0px 50px;
+
+  .background {
+    position: absolute;
+    font-size: 14rem;
+    color: rgba(255, 255, 255, 0.1);
+    left: 20%;
+    z-index: -2;
+  }
+
+  .exit {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    cursor: pointer;
+  }
+
+  .nav__link {
+    font-size: 3rem;
+
+    .numbers {
+      font-size: 1.5rem;
+    }
+
+    .nav {
+      margin-top: -20px;
+      opacity: 0;
+    }
+  }
+
+  .title {
+    color: #a1a1a1;
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+  .menu__info {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .menu {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .menu__container {
+    display: none;
+  }
+}
+
+header {
+  position: relative;
+  color: #fff;
+}
+
+.scroll-icon {
+  position: absolute;
+  width: 25px;
+  height: 45px;
+  border-radius: 50px;
+  position: absolute;
+  border: 3px solid #FFFF;
+  bottom: 2%;
+  left: 50%;
+}
+
+.scroll-icon.scroll .wheel {
+  position: absolute;
+  width: 0.7em;
+  height: 0.7em;
+  background-color: #FFFF;
+  left: 48%;
+  top: 15%;
+  transform: translate(-50%, 0);
+  border-radius: 0.6em;
+  animation: wheel 1s ease-in-out infinite;
+}
+
+.cursor {
+  position: absolute;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  user-select: none;
+  pointer-events: none;
+  animation: animate 7.5s linear infinite;
+  left: 10%;
+  top: 19%;
+  z-index: 11;
+}
+
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.cursor span {
+  position: absolute;
+  text-transform: uppercase;
+  display: inline-block;
+  top: -100px;
+  transform-origin: 0 90px;
+}
+
+@keyframes wheel {
+  0% {
+    transform: translate(-50%, 0);
+    opacity: 0;
+  }
+  20%,
+  70% {
+    opacity: 1;
+  }
+  90%, 100% {
+    transform: translate(-50%, 150%);
+    opacity: 0;
+  }
+}
+
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section p {
+  font-size: 1.5em;
+  font-family: "Larsseit-Light", sans-serif;
+  margin-left: -5.5em;
+}
+
+.anim1 span {
+  display: block;
+}
+
+.anim1 span:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1;
+  transform-origin: 100% 0;
+}
+
+.title {
+  font-family: "Thunder-BlackLC", sans-serif;
+  background-color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  font-size: 4em;
+  margin-bottom: 2rem;
+}
+
+.waterbg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: url("assets/img/charisse.jpg");
+  background-size: cover;
+  mix-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.6);
+  right: 0;
+  z-index: -1;
+}
+
+header {
+  position: relative;
+}
+
+.booking {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  width: 250px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  bottom: 10%;
+  left: 10%;
+}
+
+.booking a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.booking h3 {
+  color: #000000;
+  text-transform: uppercase;
+  font-family: "Larsseit-Medium", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.booking p {
+  color: #000000;
+  font-family: "Larsseit-Light", sans-serif;
+  margin-bottom: 15px;
+}
+
+.booking span {
+  color: #000000;
+  font-family: "Larsseit-Medium", sans-serif;
+}
+
+.sec-02 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+
+  .section-container {
+    position: relative;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .desc-container h1 {
+    margin-top: 1.5em;
+    font-family: "Thunder-LightHC", sans-serif;
+    font-size: 7rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+  }
+  
+  .desc-container p {
+    font-size: 1.5rem;
+    font-family: "Larsseit-Light", sans-serif;
+    margin-bottom: 2em;
+  }
+  
+  .desc-container a {
+    margin-top: -60px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Larsseit-Light", sans-serif;
+    color: #000;
+  }
+  
+  .word-bg {
+    position: absolute;
+    overflow-x: hidden;
+    font-family: "Garamond", sans-serif;
+    margin-top: 20%;
+    font-size: 12rem;
+    color: #f3f3f3;
+  }
+  
+  .img-container img {
+    flex: 2;
+    height: 500px;
+    width: 600px;
+    margin-top: 70px;
+    object-fit: cover;
+  }
+}
+
+.sec-03 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: flex;
+
+  .section-container {
+    position: relative;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+  }
+  
+  .desc-container h1 {
+    margin-top: 1.5em;
+    font-family: "Thunder-LightHC", sans-serif;
+    font-size: 7rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+    align-self: center;
+  }
+  
+  .desc-container p {
+    font-size: 1.5rem;
+    font-family: "Larsseit-Light", sans-serif;
+    margin-bottom: 2em;
+  }
+  
+  .desc-container a {
+    margin-top: -60px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Larsseit-Light", sans-serif;
+    color: #000;
+  }
+  
+  .word-bg {
+    position: absolute;
+    overflow-x: hidden;
+    left: 20%;
+    font-family: "Garamond", sans-serif;
+    margin-top: 20%;
+    font-size: 12rem;
+    color: #f3f3f3;
+    z-index: -1;
+  }
+  
+  .img-container img {
+    flex: 2;
+    height: 500px;
+    width: 600px;
+    margin-top: 70px;
+    object-fit: cover;
+    margin-left: 2rem;
+  }
+}
+.sec-04 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: flex;
+
+  .section-container {
+    position: relative;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+  }
+  
+  .desc-container h1 {
+    margin-top: 1.5em;
+    font-family: "Thunder-LightHC", sans-serif;
+    font-size: 7rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+    align-self: center;
+  }
+  
+  .desc-container p {
+    font-size: 1.5rem;
+    font-family: "Larsseit-Light", sans-serif;
+    margin-bottom: 2em;
+  }
+  
+  .desc-container a {
+    margin-top: -60px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Larsseit-Light", sans-serif;
+    color: #000;
+  }
+  
+  .word-bg {
+    position: absolute;
+    overflow-x: hidden;
+    left: 20%;
+    font-family: "Garamond", sans-serif;
+    margin-top: 20%;
+    font-size: 12rem;
+    color: #f3f3f3;
+    z-index: -1;
+  }
+  
+  .img-container img {
+    flex: 2;
+    height: 500px;
+    width: 600px;
+    margin-top: 70px;
+    object-fit: cover;
+    margin-left: 2rem;
+  }
+}
+.sec-05 {
+  height: 100vh !important;
+  background-color: #e5d4e1;
+  display: flex;
+
+  .section-container {
+    position: relative;
+    margin: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem;
+  }
+  
+  .desc-container h1 {
+    margin-top: 1.5em;
+    font-family: "Thunder-LightHC", sans-serif;
+    font-size: 7rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+    align-self: center;
+  }
+  
+  .desc-container p {
+    font-size: 1.5rem;
+    font-family: "Larsseit-Light", sans-serif;
+    margin-bottom: 2em;
+  }
+  
+  .desc-container a {
+    margin-top: -60px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: "Larsseit-Light", sans-serif;
+    color: #000;
+  }
+  
+  .word-bg {
+    position: absolute;
+    overflow-x: hidden;
+    left: 20%;
+    font-family: "Garamond", sans-serif;
+    margin-top: 20%;
+    font-size: 12rem;
+    color: #f3f3f3;
+    z-index: -1;
+  }
+  
+  .img-container img {
+    flex: 2;
+    height: 500px;
+    width: 600px;
+    margin-top: 70px;
+    object-fit: cover;
+    margin-left: 2rem;
+  }
+}
+
+.sec-06 {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e5d4e1;
+}
+
+
+
+@media (max-width: 800px) {
+
+  .hero-section {
+    height: 100vh;
+  }
+
+  .hero-section .title .anim1 {
+    position: absolute;
+    font-size: 14vw;
+    left: 10px;
+    top: 40%;
+  }
+
+  .waterbg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    background: url("assets/img/charisse.jpg");
+    background-size: cover;
+    mix-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.746);
+    right: 0;
+  }
+
+  .booking {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    background-color: #FFF;
+    border-radius: 50%;
+    bottom: 0;
+    /* right: 0; */
+    left: 34%;
+  }
+  
+  .booking a {
+    text-decoration: none;
+    color: #000;
+  }
+  
+  .booking h3 {
+    color: #000;
+    text-transform: uppercase;
+    font-family: "Larsseit-Medium", sans-serif;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  .booking p {
+    color: #000;
+    font-family: "Larsseit-Light", sans-serif;
+    margin-bottom: 15px;
+  }
+  
+  .booking span {
+    color: #000;
+    font-family: "Larsseit-Medium", sans-serif;
+  }
+
+  .scroll-icon {
+    display: none;
+  }
+
+  .hero-section p {
+    font-size: 4vw;
+    position: absolute;
+    bottom: 16%;
+    left: 30%;
+  }
+
+  .anim2 span {
+    display: block;
+  }
+
+}

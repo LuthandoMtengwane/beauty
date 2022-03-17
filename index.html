@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="base.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/scrollreveal"></script>
-    <title>FOODLE</title>
+    <title>BeautyMarketplace (BMP)</title>
   </head>
   <body>
     <!-- <h2 class="cursor">FOODLE-FOOD-COMPANY-</h2> -->
@@ -16,6 +16,43 @@
     <div class="scroll-icon scroll">
       <span class="wheel"></span>
     </div>
+
+    <!-- <div class="nav">
+      <div class="logo">BeautyMarketplace.</div>
+      <div class="menu__logo menu__btn">MENU</div>
+    </div>
+
+    <div class="menu">
+      <div class="background">MENU</div>
+      <div class="exit"><img src="/assets/img/exit.svg" alt="" /></div>
+      <div class="menu__container">
+        <ul class="nav-list">
+          <li class="nav__link">
+            <a class="nav" href="#">Blog <span class="numbers">01</span></a>
+          </li>
+          <li class="nav__link">
+            <a class="nav" href="#">Contact <span class="numbers">02</span></a>
+          </li>
+          <li class="nav__link">
+            <a class="nav" href="#">Home <span class="numbers">03</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="menu__container">
+        <div class="menu__info">
+          <h3 class="title">Where to find us</h3>
+          <p class="info">123 my address</p>
+        </div>
+        <div class="menu__info">
+          <h3 class="title">Contact</h3>
+          <p class="info">123-456-7890</p>
+        </div>
+        <div class="menu__info">
+          <h3 class="title">Where to find us</h3>
+          <p class="info">123 my address</p>
+        </div>
+      </div>
+    </div> -->
 
     <header>
       <a href="#"
@@ -36,22 +73,20 @@
       <div class="hero-section">
         <div class="title">
           <h1 class="anim1">
-            <span>Welcome to</span>
-            <span>our digital</span>
-            <span>food space</span>
+            <span>WELCOME TO</span>
+            <span>BEAUTY </span>
+            <span>MARKETPLACE</span>
           </h1>
         </div>
-        <p class="anim2"><span>We cater for</span> every event too.</p>
       </div>
     </header>
 
     <section class="sec-02">
-      <div class="word-bg">Explore our great</div>
+      <div class="word-bg">HAIR HAIR</div>
       <div class="section-container">
         <div class="desc-container">
           <h1>
-            Welcome to <br />
-            our space
+            HAIR
           </h1>
           <p>
             We provide great catering and hosting<br />
@@ -68,12 +103,99 @@
           >
         </div>
         <div class="img-container">
-          <img src="assets/img/eiliv-sonas-aceron.jpg" alt="" />
+          <img src="assets/img/juan.jpg" alt="" />
         </div>
       </div>
     </section>
 
-    <section class="sec-03"></section>
+    <section class="sec-03">
+      
+        <div class="img-container">
+          <img src="assets/img/nails.jpg" alt="" />
+        </div>
+        <!-- <div class="word-bg">NAILS NAILS</div> -->
+      <div class="section-container">
+        <div class="desc-container">
+          <h1>
+            NAILS
+          </h1>
+          <p>
+            We provide great catering and hosting<br />
+            services and we provide our services for <br />
+            any catering event. With great charisma<br />
+            dishes and presentation. <br />
+            We have been in business for over 6 years now.
+          </p>
+          <a href="#"
+            >DISCOVER MORE &nbsp;&nbsp;
+            <big
+              ><big><big>&#8594;</big></big></big
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+    <section class="sec-04">
+      <div class="word-bg">SPA SPA</div>
+      <div class="section-container">
+        <div class="desc-container">
+          <h1>
+            SPA
+          </h1>
+          <p>
+            We provide great catering and hosting<br />
+            services and we provide our services for <br />
+            any catering event. With great charisma<br />
+            dishes and presentation. <br />
+            We have been in business for over 6 years now.
+          </p>
+          <a href="#"
+            >DISCOVER MORE &nbsp;&nbsp;
+            <big
+              ><big><big>&#8594;</big></big></big
+            ></a
+          >
+        </div>
+        <div class="img-container">
+          <img src="assets/img/spa.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-05">
+      
+        <div class="img-container">
+          <img src="assets/img/barber.jpg" alt="" />
+        </div>
+        <!-- <div class="word-bg">NAILS NAILS</div> -->
+      <div class="section-container">
+        <div class="desc-container">
+          <h1>
+            BARBER
+          </h1>
+          <p>
+            We provide great catering and hosting<br />
+            services and we provide our services for <br />
+            any catering event. With great charisma<br />
+            dishes and presentation. <br />
+            We have been in business for over 6 years now.
+          </p>
+          <a href="#"
+            >DISCOVER MORE &nbsp;&nbsp;
+            <big
+              ><big><big>&#8594;</big></big></big
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="sec-06">
+
+      <div class="sec__container">
+        <h2 class="sec__title">"</h2>
+      </div>
+    </section>
 
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js"></script>
@@ -81,7 +203,7 @@
       var rule = CSSRulePlugin.getRule(".anim1 span:after");
 
       gsap.from(".anim1", { opacity: 0, duration: 1.5, y: -50, stagger: 0.5 });
-      gsap.from(".anim2", { opacity: 0, delay: 0.4, duration: 1.5, y: 50 });
+      // gsap.from(".anim2", { opacity: 0, delay: 0.4, duration: 1.5, y: 50 });
       gsap.from(".waterbg", { opacity: 0, delay: 0.4, duration: 1.5, x: 50 });
       gsap.to(rule, { cssRule: { scaleY: 0 }, duration: 1.5 });
       gsap.from(".booking", { opacity: 0, delay: 0.4, duration: 1.5, x: -50 });
@@ -123,6 +245,5 @@
       });
     </script>
 
-    <script src="app.js"></script>
   </body>
 </html>
